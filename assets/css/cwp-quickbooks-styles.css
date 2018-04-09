@@ -1,0 +1,23 @@
+.paginate-tables {
+	list-style: none;
+}
+
+.paginate-tables li {
+	padding: 12px;
+	background-color: #f1f1f1;
+	color: #767676;
+	display: inline-block;
+	width: auto;
+    border-radius: 10px 10px 0px 0px;
+    cursor: pointer;
+}
+
+.paginate-tables li:hover {
+	background-color: #ddd;
+}
+
+.paginate-tables li.active {
+	background-color: #aaa;
+	color: #FFF;
+	font-weight: 700;
+}
