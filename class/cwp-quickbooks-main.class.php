@@ -115,6 +115,7 @@ class Clients_WP_QuickBooks{
         global $pages;
 
         foreach($pages as $page) {
+            $page_content = nl2br($page);
             if (strpos($page, '[cwp_') !== FALSE) {
                 $args = array(
                     'meta_key' => '_clients_page_shortcode',
@@ -212,7 +213,9 @@ class Clients_WP_QuickBooks{
                                             $estimates = $resultingEstimateObj;
                                         }
 
+                                        ob_start();
                                         include_once(CWPQB_PATH_INCLUDES . '/cwp-quickbooks-table.php');
+                                        $page_content .= ob_get_clean();
                                     }
 
                                 }
@@ -221,6 +224,8 @@ class Clients_WP_QuickBooks{
                     }
                 }
             }
+
+            return $page_content;
         }
     }
 }
