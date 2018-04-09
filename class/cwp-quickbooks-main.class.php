@@ -27,7 +27,7 @@ class Clients_WP_QuickBooks{
         add_action('admin_init', array($this, 'get_access_token'));
         add_action('admin_enqueue_scripts', array( $this, 'cwp_quickbooks_add_admin_scripts' ));
         add_action('wp_enqueue_scripts', array($this, 'cwp_quickbooks_add_wp_scripts'), 20, 1);
-        add_filter('the_content', array($this, 'transactions_content_table'), 6);
+        add_filter('the_content', array($this, 'transactions_content_table'));
     }
 
     public function cwp_quickbooks_add_admin_scripts() {
